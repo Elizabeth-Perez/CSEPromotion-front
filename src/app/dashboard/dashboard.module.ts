@@ -8,15 +8,12 @@ import { NgModule } from "@angular/core";
 
 //Pages
 import { MainDashboard } from "./pages/main-dashboard/main-dashboard.component";
-import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [
         MainDashboard,
     ],
-    imports: [
-        SharedModule,
-    ],
+    imports: [],
     exports: [], 
 })
 export class DashboardModule {
