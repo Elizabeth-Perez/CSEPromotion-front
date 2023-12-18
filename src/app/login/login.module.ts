@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 
 //Components
 
@@ -8,13 +9,24 @@ import { NgModule } from "@angular/core";
 
 //Pages
 import { MainLogin } from "./pages/main-login/main-login.component";
+import { LoginService } from "./services/login.service";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ForgottenPasswordComponent } from './dialogs/forgotten-password/forgotten-password.component';
 
 @NgModule({
     declarations: [
-        MainLogin
+        MainLogin,
+        ForgottenPasswordComponent
     ],
-    imports: [],
-    exports: [], 
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
+    exports: [],
+    providers: [LoginService]
 })
 export class LoginModule {
 

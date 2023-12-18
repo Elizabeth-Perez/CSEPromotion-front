@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    // Colors
+    //------------ Primary
+    --aqua1: #036065;
+    --aqua2: #03838F;
+    --aqua3: #27C6D9;
+    --aqua4: #81DEEA;
+    --aqua5: #C5DFE2;
+    //------------ Secondary
+    --violet1: #2D2755;
+    --violet2: #6E37A5;
+    --Violet3: #A53791;
+    --violet4: #D98ACA;
+    --violet5: #E8C8E2;
+    //------------ Neutral
+    --black: #000000;
+    --black-gray: #616161;
+    --gray: #CECECE;
+    --light-gray: #F5F5F5;
+    --white: #ffffff;
+
+    //Typography
+    //------------ Font
+    --jura: 'Jura';
+    --ibm: 'IBM Plex Sans';
+    //------------ Giant Titles
+    --giant-title: 3rem;
+    --giant-subtitle: 2.5rem;
+    //------------ Titles
+    --title: 1.875rem;
+    --subtitle: 1.625rem;
+    --sub-subtitle: 1.375rem;
+    //------------ Texts
+    --big-text: 1.125rem;
+    --medium-text: 1rem;
+    --small-text: 0.875rem;
+}
+
+@import 'ngx-toastr/toastr';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--jura);
+    font-weight: bold;
+}
+
+h6,
+p {
+    font-family: var(--ibm);
+
+    span {
+        font-family: var(--ibm);
+    }
+}
+
+h1 {
+    font-size: var(--giant-title);
+}
+
+h2 {
+    font-size: var(--giant-subtitle);
+}
+
+h3 {
+    font-size: var(--title);
+}
+
+h4 {
+    font-size: var(--subtitle);
+}
+
+h5 {
+    font-size: var(--sub-subtitle);
+}
+
+h6 {
+    font-size: var(--big-text);
+}
+
+p {
+    font-size: var(--medium-text);
+
+    span {
+        font-size: var(--small-text);
+    }
+}
