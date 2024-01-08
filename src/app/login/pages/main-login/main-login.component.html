@@ -20,16 +20,16 @@
             <h6>Usuario</h6>
             <input class="dataEntry" formControlName="userControl" type="email" name="user"
                 placeholder="Ingrese su correo electrónico" maxlength="50">
-            <div class="" *ngIf="validateControl('userControl', 'required')">
+            <div class="error-msg" *ngIf="validateControl('userControl', 'required')">
                 <p>Campo requerido</p>
             </div>
-            <div class="" *ngIf="validateControl('userControl', 'email')">
-                <p>Ingrese un correo electronico valido</p>
+            <div class="error-msg" *ngIf="validateControl('userControl', 'email')">
+                <p>Ingrese un correo electrónico valido</p>
             </div>
             <h6>Contraseña</h6>
             <input class="dataEntry" formControlName="passwordControl" type="password" name="password"
                 placeholder="Ingrese su contraseña" maxlength="20">
-            <div class="" *ngIf="validateControl('passwordControl', 'required')">
+            <div class="error-msg" *ngIf="validateControl('passwordControl', 'required')">
                 <p>Campo requerido</p>
             </div>
             <div class="checkbox">

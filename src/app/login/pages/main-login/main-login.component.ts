@@ -5,6 +5,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms"
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ForgottenPasswordComponent } from "../../dialogs/forgotten-password/forgotten-password.component";
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'login-main',
@@ -23,7 +24,8 @@ export class MainLogin implements OnInit {
         private loginService: LoginService,
         private fb: FormBuilder,
         private toastr: ToastrService,
-        private modalService: NgbModal
+        private modalService: NgbModal,
+        private router: Router
     ) {
         this.loginForm = this.fb.group({
             userControl: ['', [Validators.required, Validators.email]],
@@ -32,7 +34,6 @@ export class MainLogin implements OnInit {
     }
     ngOnInit() {
         this.loginService.getCarousel().subscribe(res => {
-            console.log(res);
             this.dataImages = res;
 
             this.currentIndex = Math.floor(Math.random() * this.dataImages.length);
@@ -65,10 +66,11 @@ export class MainLogin implements OnInit {
     userAccess() {
         if (this.loginForm.valid) {
             const { userControl, passwordControl } = this.loginForm.value;
-            this.loginService.getUserAccess().subscribe(res => {
+            this.loginService.getUsers().subscribe(res => {
                 const matchedUser = res.find(users => users.user === userControl && users.password === passwordControl);
                 if (matchedUser) {
                     this.toastr.success('Acceso permitido', 'Éxito');
+                    this.router.navigate(['/dashboard'])
                 } else {
                     this.toastr.error('Usuario y/o contraseña incorrectos', 'Error');
                 }
@@ -80,13 +82,11 @@ export class MainLogin implements OnInit {
     }
 
     forgottenPassword() {
-        const modalParam = this.modalService.open(ForgottenPasswordComponent, {
+        this.modalService.open(ForgottenPasswordComponent, {
             centered: true,
             backdrop: 'static',
             windowClass: 'forgotten-password',
-            size: 'lg',
+            size: 'md',
         });
-        const userEmailValue = this.loginForm.get('userControl')?.value;
-        modalParam.componentInstance.userEmailControl.setValue(userEmailValue);
     }
 }

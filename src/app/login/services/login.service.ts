@@ -1,14 +1,22 @@
 
 import { Injectable } from "@angular/core";
-import { DataImages, ForgottenPasswordRequest, ForgottenPasswordResponse, UserAccess } from "../interfaces/login.interface";
+import { DataImages, ForgottenPasswordRequest, ForgottenPasswordResponse, User, UserAccess } from "../interfaces/login.interface";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class LoginService{
-    private endpoint: string = 'http://localhost:8080/email'
+    private endpoint: string = 'http://localhost:8080/login'
 
     constructor(private http: HttpClient){ }
+
+    getUsers(): Observable<User[]> {
+        return this.http.get<User[]>(`${this.endpoint}/all`)
+    }
+
+    getUser(userEnrollment: String): Observable<User> {
+        return this.http.get<User>(`${this.endpoint}/all/${userEnrollment}`);
+    }
 
     getCarousel(): Observable<DataImages[]> {
         return this.http.get<DataImages[]>(`${this.endpoint}/data-images`)
@@ -18,7 +26,7 @@ export class LoginService{
         return this.http.get<UserAccess[]>(`${this.endpoint}/user-access`);
     }
 
-    postEmailForgottenPassword(emailRequest: ForgottenPasswordRequest): Observable<ForgottenPasswordResponse> {
-        return this.http.post<ForgottenPasswordResponse>(`${this.endpoint}/forgotten-password`, emailRequest);
+    updatePassword(user: User): Observable<User> {
+        return this.http.put<User>(`${this.endpoint}/update/${user.userEnrollment}`, user);
     }
 }

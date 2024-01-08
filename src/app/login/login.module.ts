@@ -1,18 +1,18 @@
 import { NgModule } from "@angular/core";
-import { HttpClientModule } from "@angular/common/http";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 //Components
 
 //Dialogs
+import { ForgottenPasswordComponent } from './dialogs/forgotten-password/forgotten-password.component';
 
 //Sevices
+import { EmailService } from "../shared/services/email.service";
+import { LoginService } from "./services/login.service";
 
 //Pages
 import { MainLogin } from "./pages/main-login/main-login.component";
-import { LoginService } from "./services/login.service";
-import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ForgottenPasswordComponent } from './dialogs/forgotten-password/forgotten-password.component';
 
 @NgModule({
     declarations: [
@@ -21,12 +21,14 @@ import { ForgottenPasswordComponent } from './dialogs/forgotten-password/forgott
     ],
     imports: [
         CommonModule,
-        HttpClientModule,
         ReactiveFormsModule,
         FormsModule
     ],
     exports: [],
-    providers: [LoginService]
+    providers: [
+        LoginService,
+        EmailService
+    ]
 })
 export class LoginModule {
 
