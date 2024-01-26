@@ -1,0 +1,12 @@
+<div class="carousel" *ngIf="dataImages.length > 0"
+    [style.backgroundImage]="'url(' + dataImages[currentIndex].imageUrl + ')'">
+    <div class="data-image">
+        <h3>Instituto Tecnológico Superior de Misantla</h3>
+        <h4>Ingeniería en Sistemas Computacionales</h4>
+        <h6>{{ dataImages[currentIndex].title }}</h6>
+        <p><span> {{ dataImages[currentIndex].description }}</span></p>
+        <div *ngIf="dataImages.length === 0">
+            <p>No hay datos disponibles.</p>
+        </div>
+    </div>
+</div>

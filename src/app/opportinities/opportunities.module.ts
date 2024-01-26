@@ -8,12 +8,15 @@ import { NgModule } from "@angular/core";
 
 //Pages
 import { MainOpportunities } from "./pages/main-opportinities/main-opportunities.component";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [
-        MainOpportunities
+        MainOpportunities,
     ],
-    imports: [],
+    imports: [
+        SharedModule
+    ],
     exports: [], 
 })
 export class OpportunitiesModule {

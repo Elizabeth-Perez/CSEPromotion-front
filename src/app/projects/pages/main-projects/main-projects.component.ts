@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
     styleUrls: ['/main-projects.component.scss']
 })
 export class MainProjects {
-
+    currentRoute: string = 'projects';
 }

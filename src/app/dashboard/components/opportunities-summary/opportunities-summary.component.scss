@@ -1,0 +1,34 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+h1, h5{
+    text-align: center;
+}
+
+.card-specialities {
+    display: flex;
+    justify-content: space-around;
+    gap: 4rem;
+    align-items: center;
+    padding: 0.625rem;
+    
+    .card {
+        width: 12.5rem;
+        height: 12.5rem;
+        cursor: pointer;
+        border: none;
+    } 
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
+

@@ -1,0 +1,12 @@
+<div class="main-layout" *ngIf="projects.length > 0">
+    <h1>Nuestros proyectos</h1>
+    <div class="card-projects">
+        <div class="card" *ngFor="let project of projects">
+            <img [src]="project.imageUrl" alt="{{ project.name }}">
+            <div class="data-project">
+                <h4 class="ellipsis"> {{ project.name }}</h4>
+                <p class="line-clap-2">{{ project.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>

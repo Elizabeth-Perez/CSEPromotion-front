@@ -32,12 +32,6 @@ export interface DataImages {
     imageUrl: number;
 }
 
-export interface UserAccess {
-    user: string;
-    session: string;
-    password: string;
-}
-
 export interface ForgottenPasswordRequest {
     to: string;
     subject: string;

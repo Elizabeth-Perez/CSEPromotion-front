@@ -1,0 +1,39 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 2s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .data-image {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem 21.5rem 3rem 3rem;
+        color: var(--white);
+        gap: 0.625rem;
+        text-align: justify;
+        position: relative;
+        z-index: 1;
+
+        h3 {
+            text-transform: uppercase;
+        }
+    }
+}

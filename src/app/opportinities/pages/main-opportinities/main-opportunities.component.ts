@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
     styleUrls: ['/main-opportunities.component.scss']
 })
 export class MainOpportunities {
-
+    currentRoute: string = 'opportunities';
 }

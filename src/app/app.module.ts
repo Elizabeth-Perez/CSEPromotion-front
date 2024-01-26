@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Modules
 import { AppRoutingModule } from './app-routing.module';
 import { AboutCSEModule } from './about-cse/about-cse.module';
+import { AdministratorModule } from './administrator/administrator.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { LoginModule } from './login/login.module';
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule,
     AboutCSEModule,
+    AdministratorModule,
     BrowserModule,
     DashboardModule,
     LoginModule,

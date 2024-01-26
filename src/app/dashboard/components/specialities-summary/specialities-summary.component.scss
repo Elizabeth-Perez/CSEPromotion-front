@@ -1,0 +1,63 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+h1, h5{
+    text-align: center;
+}
+
+.card-specialities {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    align-items: center;
+    padding: 3rem 0.625rem;
+    
+    .card {
+        width: 31.25rem;
+        height: 43.75rem;
+        border-radius: 1.725rem;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.10);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 2px solid var(--light-gray);
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.30);
+        }
+        
+        .data-speciality {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1.88rem;
+            color: var(--white);
+            border-radius: 1.5625rem;
+            z-index: 2;
+        }
+    }   
+    
+    .card img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 1.725rem;
+        z-index: 1;
+    } 
+
+}
+

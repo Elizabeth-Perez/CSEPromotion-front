@@ -1,0 +1,17 @@
+<div class="main-layout" *ngIf="programs.length > 0">
+    <div class="section-color">
+        <img src="./../../../../assets/images/circuito.png" alt="">
+    </div>
+    <div class="section-programs">
+        <h1>Nuestros programas</h1>
+        <div class="card-programs">
+            <div class="card" *ngFor="let program of programs">
+                <img [src]="program.imageUrl" alt="{{ program.name }}">
+                <div class="data-program">
+                    <h4 class="ellipsis"> {{ program.name }} </h4>
+                    <p class="line-clap-2"> {{ program.description }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

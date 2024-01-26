@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
     styleUrls: ['./main-about-cse.component.scss']
 })
 export class MainAboutCSE {
-
+    currentRoute: string = 'about-cse';
 }

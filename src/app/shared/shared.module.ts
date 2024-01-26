@@ -3,6 +3,7 @@ import { RouterModule } from "@angular/router";
 
 //Components
 import { MainNavigationComponent } from "./components/main-navigation/main-navigation.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 //Dialogs
 
@@ -11,12 +12,14 @@ import { MainNavigationComponent } from "./components/main-navigation/main-navig
 @NgModule({
     declarations: [
         MainNavigationComponent,
+        FooterComponent,
     ],
     imports: [
         RouterModule,
     ],
     exports: [
         MainNavigationComponent,
+        FooterComponent,
     ], 
 })
 export class SharedModule {

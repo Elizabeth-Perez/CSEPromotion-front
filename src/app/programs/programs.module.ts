@@ -8,12 +8,15 @@ import { NgModule } from "@angular/core";
 
 //Pages
 import { MainPrograms } from "./pages/main-programs/main-programs.component";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [
         MainPrograms,
     ],
-    imports: [],
+    imports: [
+        SharedModule
+    ],
     exports: [], 
 })
 export class ProgramsModule {

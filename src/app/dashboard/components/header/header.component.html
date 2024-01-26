@@ -1,0 +1,13 @@
+<div class="main-layout">
+    <div class="data">
+        <div class="title-section">
+            <div class="line-vertical"></div>
+            <h1>Ingenieria en Sistemas Computacionales</h1>
+        </div>
+        <h5>Es una disciplina que se enfoca en el diseño, desarrollo y gestión de sistemas informáticos, combinando conocimientos de hardware y software.</h5>
+        <button class="header-button" (click)="goToViewMore()">Ver mas</button>
+    </div>
+    <div class="carousel" *ngIf="images.length > 0">
+        <img [src]="images[currentIndex].imageUrl">
+    </div>
+</div>

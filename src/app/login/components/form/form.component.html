@@ -1,0 +1,33 @@
+<div class="section-form">
+    <div class="logo">
+        <img src="./../../../../assets/images/cse_standard.png" loading="lazy">
+    </div>
+    <form class="form" [formGroup]="loginForm">
+        <h3>Inicia sesión</h3>
+        <h6>Usuario</h6>
+        <input class="dataEntry" formControlName="userControl" type="email" name="user"
+            placeholder="Ingrese su correo electrónico" maxlength="50">
+        <div class="error-msg" *ngIf="validateControl('userControl', 'required')">
+            <p>Campo requerido</p>
+        </div>
+        <div class="error-msg" *ngIf="validateControl('userControl', 'email')">
+            <p>Ingrese un correo electrónico valido</p>
+        </div>
+        <h6>Contraseña</h6>
+        <input class="dataEntry" formControlName="passwordControl" type="password" name="password"
+            placeholder="Ingrese su contraseña" maxlength="20">
+        <div class="error-msg" *ngIf="validateControl('passwordControl', 'required')">
+            <p>Campo requerido</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" name="forgotten-password">
+            <p><span>Recuérdame la contraseña</span></p>
+        </div>
+        <button (click)="userAccess()" type="button" name="btn-login">Ingresar</button>
+        <p class="forgotten" (click)="forgottenPassword()"><span>¿Olvidaste la contraseña?</span></p>
+    </form>
+    <div class="support-text">
+        <p><span>Cualquier problema de autenticación por favor enviar un correo a <a
+                    href="mailto:jef_isc@itsm.edu.mx">jef_isc@itsm.edu.mx</a></span></p>
+    </div>
+</div>

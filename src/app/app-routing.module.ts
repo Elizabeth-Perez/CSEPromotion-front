@@ -22,6 +22,13 @@ const routes: Routes = [
         component: MainAboutCSE
     },
     {
+        path: 'administrator',
+        loadChildren: () =>
+          import('./administrator/administrator.module').then(
+            (m) => m.AdministratorModule
+          ),
+      },
+    {
         path: 'projects',
         component: MainProjects
     },
@@ -39,7 +46,7 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'login'
+        redirectTo: 'dashboard'
     },
 ];
 

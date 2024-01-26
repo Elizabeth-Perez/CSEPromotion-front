@@ -1,0 +1,9 @@
+<div class="main-layout" *ngIf="opportunities.length > 0">
+    <h1>Nuestras oportunidades</h1>
+    <h5>Conectamos tu educación con el mundo laboral mediante colaboraciones con empresas líderes en tecnología. Aprovecha la oportunidad de aplicar tus conocimientos en entornos del mundo real a través de convenios con empresas que valoran la innovación y la excelencia.</h5>
+    <div class="card-specialities">
+        <div class="card" *ngFor="let opportunity of opportunities">
+            <img [src]="opportunity.imageURL">
+        </div>
+    </div>
+</div>

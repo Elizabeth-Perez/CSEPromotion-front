@@ -1,0 +1,12 @@
+<div class="main-layout" *ngIf="specialities.length > 0">
+    <h1>Nuestras especialidades</h1>
+    <h5>Explorarás los módulos diseñados para brindarte conocimientos especializados y habilidades avanzadas en áreas cruciales de la carrera.</h5>
+    <div class="card-specialities">
+        <div class="card" *ngFor="let speciality of specialities">
+            <img [src]="speciality.imageUrl" alt="{{ speciality.name }}">
+            <div class="data-speciality">
+                <h4> {{ speciality.name }}</h4>
+            </div>
+        </div>
+    </div>
+</div>
