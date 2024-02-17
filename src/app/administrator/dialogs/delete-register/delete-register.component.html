@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <h4 class="modal-title">¿Desea eliminar el registro {{ id }} ?</h4>
+</div>
+<div class="modal-body">
+    <p>Esta acción no se puede deshacer y eliminará permanentemente el registro seleccionado.</p>
+    <div class="buttons">
+        <button class="secondary" (click)="onClose()">Cancelar</button>
+        <button class="primary" (click)="toAccept()">Aceptar</button>
+    </div>
+</div>

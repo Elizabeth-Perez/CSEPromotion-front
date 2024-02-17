@@ -1,0 +1,48 @@
+.modal-header {
+    padding: 3rem 3rem 1rem 3rem;
+    background-color: rgba(255, 255, 255, 0); /* Fondo completamente transparente */
+}
+
+.modal-body {
+    padding: 1rem 3rem 3rem 3rem;
+    background-color: rgba(255, 255, 255, 0); /* Fondo completamente transparente */
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.625rem;
+    padding: 0.75rem 0rem;
+    margin-top: 0.625rem;
+}
+
+button {
+    display: flex;
+    width: 8.625rem;
+    height: 3.125rem;
+    padding: 0.75rem 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5625rem;
+    color: var(--white);
+    font-family: var(--ibm);
+    font-size: 1rem;
+    border: none;
+}
+
+.primary {
+    background: var(--violet2);
+}
+
+.primary:hover {
+    background: var(--violet1);
+}
+
+.secondary {
+    background: var(--aqua2);
+}
+
+.secondary:hover {
+    background: var(--aqua1);
+}

@@ -1,0 +1,127 @@
+.main-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .content {
+        width: 100%;
+        padding: 2rem 3.5rem;
+
+        .form {
+            gap: 1rem;
+            max-height: 80%;
+            overflow-y: auto;
+            margin-top: 2rem;
+            padding: 1rem;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .row-1 {
+                display: grid;
+                gap: 2%;
+                grid-template-columns: 34% 64%;
+            }
+
+            .row-2 {
+                display: grid;
+                gap: 2%;
+                grid-template-columns: 64% 34%;
+            }
+
+            .row-3 {
+                display: grid;
+                gap: 2%;
+                grid-template-columns: 34% 64%;
+            }
+
+            .phone {
+                display: grid;
+                grid-template-columns: 65% 34%;
+                gap: 1%;
+            }
+
+            legend {
+                font-size: var(--sub-subtitle);
+                font-weight: bold;
+            }
+
+            label {
+                font-size: var(--big-text);
+                margin: .5rem;
+            }
+
+            input, textarea {
+                width: 100%;
+                height: 3rem;
+                padding: 0.75rem 2rem;
+                border: none;
+                border-radius: 1.5625rem;
+                background-color: var(--light-gray);
+            }
+
+            textarea {
+                height: 5rem;
+                resize: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            .warnings {
+                color: red;
+                font-weight: bold;
+            }
+
+            .combobox {
+                display: flex;
+                width: 100%;
+                height: 3rem;
+                padding: 0.75rem 2rem;
+                border: none;
+                border-radius: 1.5625rem;
+                background-color: var(--light-gray);
+            }
+        }
+
+        .card {
+            background-color: var(--white);
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            padding: 2rem;
+            border-radius: 1.5625rem;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.10);
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1rem;
+            height: 10%;
+            padding: 1rem;
+            border-radius: 1.5625rem;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+    
+            button {
+                width: 15rem;
+                height: 3.125rem;
+                padding: 0.75rem 2rem;
+                background-color: var(--aqua2);
+                border: none;
+                border-radius: 1.5625rem;
+                color: var(--white)
+            }
+
+            .active-button {
+                background-color: var(--gray);
+            }
+            
+        }
+    }
+
+    
+}

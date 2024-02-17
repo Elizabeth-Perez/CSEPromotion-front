@@ -1,0 +1,41 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'specialities'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle" [searchBan]="false"></administrator-header>
+        <form class="form">
+            <div class="row-1">
+                <fieldset class="card" [formGroup]="identificationForm">
+                    <legend>Identificador</legend>
+                    <label>ID<span> *</span></label>
+                    <input type="text" formControlName="keySpeciality" placeholder="ABC-0000" [readonly]="viewBan || editBan">
+                    <!-- KeySpeciality Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'keySpeciality', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'keySpeciality', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Nombre<span> *</span></label>
+                    <input type="text" formControlName="name" placeholder="Inserte el nombre de la especialidad" [readonly]="viewBan">
+                    <!-- Name Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'name', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'name', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                </fieldset>
+                <fieldset class="card" [formGroup]="propertiesForm">
+                    <label>Definicion<span> *</span></label>
+                    <input type="text" formControlName="definition" placeholder="Inserta una breve definicion" [readonly]="viewBan">
+                    <!-- Definition Validators -->
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'definition', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'definition', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Imagen principal<span> *</span></label>
+                    <input type="url" formControlName="imageUrl" placeholder="http://image.jpg" [readonly]="viewBan">
+                    <!-- Name Validators -->
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'imageUrl', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'imageUrl', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="actions">
+            <button (click)="add()" [disabled]="!addBan" [ngClass]="{'active-button': !addBan}">Agregar registro</button>
+            <button (click)="edit()" [disabled]="!editBan" [ngClass]="{'active-button': !editBan}">Guardar cambios</button>
+        </div>
+    </div>
+</div>

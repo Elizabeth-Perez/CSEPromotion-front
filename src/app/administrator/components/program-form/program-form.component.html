@@ -1,0 +1,68 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'programs'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle" [searchBan]="false"></administrator-header>
+        <form class="form">
+            <div class="row-1">
+                <fieldset class="card" [formGroup]="identificationForm">
+                    <legend>Identificador</legend>
+                    <label>Nombre<span> *</span></label>
+                    <input type="text" formControlName="name" placeholder="Inserta el nombre del programa"
+                        [readonly]="viewBan">
+                    <!-- Name Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'name', 'required') && !viewBan">
+                        Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'name', 'maxlength') && !viewBan">
+                        Numero de caracteres exedido</div>
+                    <label>Descripcion<span> *</span></label>
+                    <textarea type="text" formControlName="description"
+                        placeholder="Inserta una breve descripcion del programa" [readonly]="viewBan"></textarea>
+                    <!-- Description Validators -->
+                    <div class="warnings"
+                        *ngIf="validateControl(identificationForm, 'description', 'required') && !viewBan">Campo
+                        requerido.</div>
+                    <div class="warnings"
+                        *ngIf="validateControl(identificationForm, 'description', 'maxlength') && !viewBan">Numero de
+                        caracteres exedido</div>
+                </fieldset>
+                <fieldset class="card" [formGroup]="propertiesForm">
+                    <legend>Propiedades</legend>
+                    <label>Sitio web<span> *</span></label>
+                    <input formControlName="hyperlink" placeholder="Ingrese la URL del sitio oficial del programa"
+                        [readonly]="viewBan">
+                    <!-- Hyperlink Validators -->
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'hyperlink', 'required') && !viewBan">
+                        Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'hyperlink', 'maxlength') && !viewBan">
+                        Numero de caracteres exedido</div>
+                    <label>Imagen principal<span> *</span></label>
+                    <input type="url" formControlName="imageUrl" placeholder="http://image.jpg" [readonly]="viewBan">
+                    <!-- ImageUrl Validators -->
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'imageUrl', 'required') && !viewBan">
+                        Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'imageUrl', 'maxlength') && !viewBan">
+                        Numero de caracteres exedido</div>
+                    <label>Tipo de programa<span> *</span></label>
+                    <select class="combobox" formControlName="programType" (change)="selectProgramType()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option *ngFor="let pt of programType" [value]="pt?.idProgramType">
+                            {{ pt?.name }}
+                        </option>
+                    </select>
+                    <!-- ProgramType Validators -->
+                    <div class="warnings"
+                        *ngIf="validateControl(propertiesForm, 'programType', 'required') && !viewBan">Campo
+                        requerido.</div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="actions">
+            <button (click)="add()" [disabled]="!addBan" [ngClass]="{'active-button': !addBan}">Agregar
+                registro</button>
+            <button (click)="edit()" [disabled]="!editBan" [ngClass]="{'active-button': !editBan}">Guardar
+                cambios</button>
+        </div>
+    </div>
+</div>

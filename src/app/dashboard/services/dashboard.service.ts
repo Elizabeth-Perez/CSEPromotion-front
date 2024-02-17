@@ -5,9 +5,11 @@ import { Carousel, Carrer, Opportunity, Program, Project, Speciality } from "../
 
 @Injectable()
 export class DashboardService {
-    private endpoint: string = 'http://localhost:8080/dashboard'
+    private endpoint: string = 'http://localhost:8080/dashboard';
 
-    constructor(private http: HttpClient){ }
+    constructor(
+        private http: HttpClient,
+    ){}
 
     getCarousels(): Observable<Carousel[]> {
         return this.http.get<Carousel[]>(`${this.endpoint}/all`)

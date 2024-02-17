@@ -1,0 +1,80 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'projects'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle" [searchBan]="false"></administrator-header>
+        <form class="form">
+            <div class="row-1">
+                <fieldset class="card" [formGroup]="identificationForm">
+                    <legend>Identificador</legend>
+                    <label>Nombre<span> *</span></label>
+                    <input type="text" formControlName="name" placeholder="Inserta el nombre del proyecto"
+                        [readonly]="viewBan">
+                    <!-- Name Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'name', 'required') && !viewBan">
+                        Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'name', 'maxlength') && !viewBan">
+                        Numero de caracteres exedido</div>
+                    <label>Descripcion<span> *</span></label>
+                    <textarea formControlName="description" placeholder="Ingrese una brebe descripcion del proyecto"
+                        [readonly]="viewBan"></textarea>
+                    <!-- Description Validators -->
+                    <div class="warnings"
+                        *ngIf="validateControl(identificationForm, 'description', 'required') && !viewBan">Campo
+                        requerido.</div>
+                    <label>Imagen principal<span> *</span></label>
+                    <textarea formControlName="imageUrl" placeholder="http://image.jpg" [readonly]="viewBan"></textarea>
+                    <!-- ImageUrl Validators -->
+                    <div class="warnings"
+                        *ngIf="validateControl(identificationForm, 'imageUrl', 'required') && !viewBan">Campo requerido.
+                    </div>
+                </fieldset>
+                <fieldset class="card" [formGroup]="academyForm">
+                    <legend>Academia</legend>
+                    <label>Asesor<span> *</span></label>
+                    <select class="combobox" formControlName="academy" (change)="selectAcademy()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option *ngFor="let aa of academy" [value]="aa?.teacherEnrollment">
+                            {{ aa?.teacherEnrollment }}
+                        </option>
+                    </select>
+                    <!-- Academy Validators -->
+                    <div class="warnings" *ngIf="validateControl(academyForm, 'academy', 'required') && !viewBan">Campo requerido.</div>
+                </fieldset>
+            </div>
+            <div class="row-2">
+                <fieldset class="card" [formGroup]="projectMemberForm">
+                    <legend>Miembros del proyecto</legend>
+                    <label>Alumno<span> *</span></label>
+                    <select class="combobox" formControlName="projectMember" (change)="selectProjectMember()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option *ngFor="let pmm of projectMember" [value]="pmm?.controlNumber">
+                            {{ pmm?.controlNumber}}
+                        </option>
+                    </select>
+                    <!-- ProjectMembers Validators -->
+                    <div class="warnings" *ngIf="validateControl(projectMemberForm, 'projectMember', 'required') && !viewBan">Campo requerido.</div>
+                </fieldset>
+                <fieldset class="card" [formGroup]="categoryForm">
+                    <legend>Categorias</legend>
+                    <label>Categoria<span> *</span></label>
+                    <select class="combobox" formControlName="category" (change)="selectCategory()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option *ngFor="let cc of category" [value]="cc?.idCategory">
+                            {{ cc?.name }}
+                        </option>
+                    </select>
+                    <!-- Categories Validators -->
+                    <div class="warnings" *ngIf="validateControl(categoryForm, 'category', 'required') && !viewBan">Campo requerido.</div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="actions">
+            <button (click)="add()" [disabled]="!addBan" [ngClass]="{'active-button': !addBan}">Agregar
+                registro</button>
+            <button (click)="edit()" [disabled]="!editBan" [ngClass]="{'active-button': !editBan}">Guardar
+                cambios</button>
+        </div>
+    </div>
+</div>

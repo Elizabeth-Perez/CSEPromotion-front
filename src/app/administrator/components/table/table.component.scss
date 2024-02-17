@@ -1,0 +1,51 @@
+.table {
+    width: 100%;
+    height: auto;
+    background-color: var(--white);
+    margin-top: 2rem;
+    border-radius: 1.5625rem;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.10);
+
+    .headers {
+        display: inline-block;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    td {
+        padding: .8rem 2rem;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+    }
+
+    .headers {
+        background-color: rgba(0, 0, 0, 0);
+        padding: 1rem 0;
+    }
+
+    .td-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    svg {
+        cursor: pointer;
+    }
+
+    .view:hover * {
+        fill: green
+    }
+
+    .edit:hover * {
+        fill: blue
+    }
+
+    .delete:hover * {
+        fill: red
+    }
+
+    span {
+        width: 100%;
+    }  
+}

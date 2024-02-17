@@ -71,13 +71,13 @@ export interface Project {
 }
 
 export interface Program {
+  idProgram: number;
   carrer: Carrer;
   programType: ProgramType;
   name: string;
   description: string;
   imageUrl: string;
   hyperlink: string;
-  idPrograms: number;
 }
 
 export interface ProgramType {
@@ -101,4 +101,5 @@ export interface Carrer {
   snFacebook: string;
   snYoutube: string;
   snLinkedin: string;
+  status: string;
 }

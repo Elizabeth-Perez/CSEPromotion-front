@@ -23,6 +23,7 @@ export interface User {
     snFacebook: string;
     snYoutube: string;
     snLinkedin: string;
+    status: string;
   }
   
   

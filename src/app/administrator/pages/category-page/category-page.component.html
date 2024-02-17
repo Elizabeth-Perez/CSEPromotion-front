@@ -1,0 +1,11 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'categories'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle"></administrator-header>
+        <div class="tables">
+            <administrator-table [headers]="headers" [objects]="categories"></administrator-table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'opportunities'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle" [searchBan]="false"></administrator-header>
+        <form class="form">
+            <div class="row-1">
+                <fieldset class="card" [formGroup]="entityForm">
+                    <legend>Entidad</legend>
+                    <label>Nombre<span> *</span></label>
+                    <select class="combobox" formControlName="entity" (change)="selectEntity()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option *ngFor="let e of entity" [value]="e?.idEntity">
+                            {{ e?.name }}
+                        </option>
+                    </select>
+                    <!-- Entity Validators -->
+                    <div class="warnings" *ngIf="validateControl(entityForm, 'entity', 'required') && !viewBan">Campo requerido.</div>
+                </fieldset>
+                <fieldset class="card" [formGroup]="stayForm">
+                    <legend>Estancias</legend>
+                    <label>Nombre<span> *</span></label>
+                    <select class="combobox" formControlName="stay" (change)="selectStay()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option *ngFor="let s of stay" [value]="s?.idStay">
+                            {{ s?.name }}
+                        </option>
+                    </select>
+                    <!-- Stay Validators -->
+                    <div class="warnings" *ngIf="validateControl(stayForm, 'stay', 'required') && !viewBan">Campo requerido.</div>
+                </fieldset>
+            </div>
+            <div class="row-2">
+                <fieldset class="card" [formGroup]="participantForm">
+                    <legend>Participantes</legend>
+                    <label>Nombre<span> *</span></label>
+                    <select class="combobox" formControlName="participant" (change)="selectParticipant()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option *ngFor="let p of participant" [value]="p?.idParticipant">
+                            {{ p?.type }}
+                        </option>
+                    </select>
+                    <!-- Participant Validators -->
+                    <div class="warnings" *ngIf="validateControl(participantForm, 'participant', 'required') && !viewBan">Campo requerido.</div>
+                </fieldset>
+                <fieldset class="card" [formGroup]="propertiesForm">
+                    <legend>Propiedades</legend>
+                    <label>Imagen principal<span> *</span></label>
+                    <input type="url" formControlName="imageURL" placeholder="http://image.jpg" [readonly]="viewBan">
+                    <!-- ImageURL Validators -->
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'imageURL', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'imageURL', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Sitio Oficial<span> *</span></label>
+                    <input type="url" formControlName="hyperlink" placeholder="Ingrese la URL del sitio oficial" [readonly]="viewBan">
+                    <!-- Hyperlink Validators -->
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'hyperlink', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(propertiesForm, 'hyperlink', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="actions">
+            <button (click)="add()" [disabled]="!addBan" [ngClass]="{'active-button': !addBan}">Agregar registro</button>
+            <button (click)="edit()" [disabled]="!editBan" [ngClass]="{'active-button': !editBan}">Guardar cambios</button>
+        </div>
+    </div>
+</div>

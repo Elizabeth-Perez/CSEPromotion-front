@@ -27,7 +27,7 @@ const routes: Routes = [
           import('./administrator/administrator.module').then(
             (m) => m.AdministratorModule
           ),
-      },
+    },
     {
         path: 'projects',
         component: MainProjects

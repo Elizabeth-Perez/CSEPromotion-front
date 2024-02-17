@@ -1,0 +1,119 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'career'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle" [searchBan]="false"></administrator-header>
+        <form class="form">
+            <div class="row-1">
+                <fieldset class="card" [formGroup]="identificationForm">
+                    <legend>Identificador</legend>
+                    <label>Programa de estudios<span> *</span></label>
+                    <input type="text" formControlName="studyProgram" placeholder="ABCD-0000-000" [readonly]="viewBan || editBan">
+                    <!-- StudyProgram Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'studyProgram', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'studyProgram', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Correo electronico<span> *</span></label>
+                    <input type="email" formControlName="email" placeholder="ejemplo@mail.com" [readonly]="viewBan">
+                    <!-- Email Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'email', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'email', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'email', 'email') && !viewBan">Correo electronico no valido</div>
+                    <div class="phone">
+                        <div>
+                            <label>Telefono<span> *</span></label>
+                            <input type="number" formControlName="phone" placeholder="000-000-0000" [readonly]="viewBan">
+                            <!-- Phone Validators -->
+                            <div class="warnings" *ngIf="validateControl(identificationForm, 'phone', 'required') && !viewBan">Campo requerido.</div>
+                            <div class="warnings" *ngIf="validateControl(identificationForm, 'phone', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                            <div class="warnings" *ngIf="validateControl(identificationForm, 'phone', 'pattern') && !viewBan">Solo se permiten numeros</div>
+                        </div>
+                        <div>
+                            <label>Ext.<span> *</span></label>
+                            <input type="number"formControlName="extension" placeholder="000" [readonly]="viewBan">
+                            <!-- Extension Validators -->
+                            <div class="warnings" *ngIf="validateControl(identificationForm, 'extension', 'required') && !viewBan">Campo requerido.</div>
+                            <div class="warnings" *ngIf="validateControl(identificationForm, 'extension', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                            <div class="warnings" *ngIf="validateControl(identificationForm, 'extension', 'pattern') && !viewBan">Solo se permiten numeros</div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="card" [formGroup]="identityForm">
+                    <legend>Identidad</legend>
+                    <label>Mision<span> *</span></label>
+                    <textarea formControlName="mission" placeholder="Ingrese la mision de la carrera" [readonly]="viewBan"></textarea>
+                    <!-- Mission Validators -->
+                    <div class="warnings" *ngIf="validateControl(identityForm, 'mission', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identityForm, 'mission', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Vision<span> *</span></label>
+                    <textarea formControlName="vision" placeholder="Ingrese la vision de la carrera" [readonly]="viewBan"></textarea>
+                    <!-- Vision Validators -->
+                    <div class="warnings" *ngIf="validateControl(identityForm, 'vision', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identityForm, 'vision', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Objetivo del programa<span> *</span></label>
+                    <textarea formControlName="programPurpose" placeholder="Ingrese el objetivo de la carrera" [readonly]="viewBan"></textarea>
+                    <!-- ProgramPurpose Validators -->
+                    <div class="warnings" *ngIf="validateControl(identityForm, 'programPurpose', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identityForm, 'programPurpose', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Campo de accion<span> *</span></label>
+                    <textarea formControlName="actionField" placeholder="Ingrese el campo de accion de la carrera" [readonly]="viewBan"></textarea>
+                    <!-- ActionField Validators -->
+                    <div class="warnings" *ngIf="validateControl(identityForm, 'actionField', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identityForm, 'actionField', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                </fieldset>
+            </div>
+            <div class="row-2">
+                <fieldset class="card" [formGroup]="profilesForm">
+                    <legend>Perfiles</legend>
+                    <label>Perfil de ingreso<span> *</span></label>
+                    <textarea formControlName="admissionProfile" placeholder="Ingrese el perfil de ingreso de la carrera" [readonly]="viewBan"></textarea>
+                    <!-- AdmissionProfile Validators -->
+                    <div class="warnings" *ngIf="validateControl(profilesForm, 'admissionProfile', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(profilesForm, 'admissionProfile', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Perfil de egreso<span> *</span></label>
+                    <textarea formControlName="graduationProfile" placeholder="Ingrese el perfil de egreso de la carrera" [readonly]="viewBan"></textarea>
+                    <!-- GraduationProfile Validators -->
+                    <div class="warnings" *ngIf="validateControl(profilesForm, 'graduationProfile', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(profilesForm, 'graduationProfile', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                </fieldset>
+                <fieldset class="card" [formGroup]="academyForm">
+                    <legend>Academia</legend>
+                    <label>Organigrama de la academia<span> *</span></label>
+                    <input type="url" formControlName="studyGridUrl" placeholder="Ingrese la URL del organigrama de la academia" [readonly]="viewBan">
+                    <!-- GraduationProfile Validators -->
+                    <div class="warnings" *ngIf="validateControl(academyForm, 'studyGridUrl', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(academyForm, 'studyGridUrl', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Reticula<span> *</span></label>
+                    <input type="url" formControlName="chartUrl" placeholder="Ingrese la URL de la reticula" [readonly]="viewBan">
+                    <!-- ChartUrl Validators -->
+                    <div class="warnings" *ngIf="validateControl(academyForm, 'chartUrl', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(academyForm, 'chartUrl', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                </fieldset>
+            </div>
+            <div class="row-3">
+                <fieldset class="card" [formGroup]="socialForm">
+                    <legend>Redes Sociales</legend>
+                    <label>Facebook<span> *</span></label>
+                    <input type="url" formControlName="snFacebook" placeholder="http://facebook.com/" [readonly]="viewBan">
+                    <!-- SnFacebook Validators -->
+                    <div class="warnings" *ngIf="validateControl(socialForm, 'snFacebook', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(socialForm, 'snFacebook', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Youtube<span> *</span></label>
+                    <input type="url" formControlName="snYoutube" placeholder="http://youtube.com/" [readonly]="viewBan">
+                    <!-- SnYoutube Validators -->
+                    <div class="warnings" *ngIf="validateControl(socialForm, 'snYoutube', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(socialForm, 'snYoutube', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Linkedin<span> *</span></label>
+                    <input type="url" formControlName="snLinkedin" placeholder="http://linkedin.com/" [readonly]="viewBan">
+                    <!-- SnLinkedin Validators -->
+                    <div class="warnings" *ngIf="validateControl(socialForm, 'snLinkedin', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(socialForm, 'snLinkedin', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="actions">
+            <button (click)="add()" [disabled]="!addBan" [ngClass]="{'active-button': !addBan}">Agregar registro</button>
+            <button (click)="edit()" [disabled]="!editBan" [ngClass]="{'active-button': !editBan}">Guardar cambios</button>
+        </div>
+    </div>
+</div>

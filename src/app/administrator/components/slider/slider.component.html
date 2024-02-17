@@ -14,7 +14,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                 <path d="M21 2.33325H6.99996C5.71663 2.33325 4.66663 3.38325 4.66663 4.66659V23.3333C4.66663 24.6166 5.71663 25.6666 6.99996 25.6666H21C22.2833 25.6666 23.3333 24.6166 23.3333 23.3333V4.66659C23.3333 3.38325 22.2833 2.33325 21 2.33325ZM6.99996 4.66659H12.8333V13.9999L9.91663 12.2499L6.99996 13.9999V4.66659Z" fill="white"/>
             </svg>
-            Carrera
+            Carreras
         </button>
         <button class="icon-button" [class.selected]="currentRoute === 'projects'" routerLink="/administrator/projects">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -42,6 +42,36 @@
                 <path d="M14 8.16667V5.83333C14 4.55 12.95 3.5 11.6667 3.5H4.66671C3.38337 3.5 2.33337 4.55 2.33337 5.83333V22.1667C2.33337 23.45 3.38337 24.5 4.66671 24.5H23.3334C24.6167 24.5 25.6667 23.45 25.6667 22.1667V10.5C25.6667 9.21667 24.6167 8.16667 23.3334 8.16667H14ZM7.00004 22.1667H4.66671V19.8333H7.00004V22.1667ZM7.00004 17.5H4.66671V15.1667H7.00004V17.5ZM7.00004 12.8333H4.66671V10.5H7.00004V12.8333ZM7.00004 8.16667H4.66671V5.83333H7.00004V8.16667ZM11.6667 22.1667H9.33337V19.8333H11.6667V22.1667ZM11.6667 17.5H9.33337V15.1667H11.6667V17.5ZM11.6667 12.8333H9.33337V10.5H11.6667V12.8333ZM11.6667 8.16667H9.33337V5.83333H11.6667V8.16667ZM22.1667 22.1667H14V19.8333H16.3334V17.5H14V15.1667H16.3334V12.8333H14V10.5H22.1667C22.8084 10.5 23.3334 11.025 23.3334 11.6667V21C23.3334 21.6417 22.8084 22.1667 22.1667 22.1667ZM21 12.8333H18.6667V15.1667H21V12.8333ZM21 17.5H18.6667V19.8333H21V17.5Z" fill="white"/>
             </svg>
             Oportunidades
+        </button>
+        <button class="icon-button" [class.selected]="currentRoute === 'project-members'" routerLink="/administrator/project-members">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 22 22">
+                <path d="M12 4C9.789063 4 8 5.789063 8 8C8 10.210938 9.789063 12 12 12C14.210938 12 16 10.210938 16 8C16 5.789063 14.210938 4 12 4 Z M 9.03125 13.40625C5.253906 14.550781 4 17.65625 4 17.65625L4 20L20 20L20 17.65625C20 17.65625 18.746094 14.550781 14.96875 13.40625C14.761719 14.863281 13.511719 16 12 16C10.488281 16 9.238281 14.863281 9.03125 13.40625Z" fill="#FFFFFF"/>
+            </svg>
+            Alumnos
+        </button>
+        <button class="icon-button" [class.selected]="currentRoute === 'academy'" routerLink="/administrator/academy">
+            <svg xmlns="http://www.w3.org/2000/svg"  width="28" height="28" viewBox="0 0 24 24">
+                <path d="M12 3C9.8027056 3 8 4.8027056 8 7C8 9.1972944 9.8027056 11 12 11C14.197294 11 16 9.1972944 16 7C16 4.8027056 14.197294 3 12 3 z M 18 3L18.005859 8.9003906L17.597656 13L15 13L12 18L9.2226562 13.371094C6.7406563 14.064094 5 15.653 5 17.5L5 19L3 19L3 21L5 21L15 21L21 21L21 19L19.005859 19L20 9L20 3L18 3 z" fill="#FFFFFF"/>
+            </svg>
+            Academia
+        </button>
+        <button class="icon-button" [class.selected]="currentRoute === 'entities'" routerLink="/administrator/entities">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                <path d="M6 3L6 11L8 11L8 9L9 9L9 7L8 7L8 5L10 5L10 7L12 7L12 5L14 5L14 7L16 7L16 3L6 3 z M 11 9L11 21L13 21L13 19L15 19L15 21L17 21L17 19L19 19L19 21L21 21L21 9L11 9 z M 13 11L15 11L15 13L13 13L13 11 z M 17 11L19 11L19 13L17 13L17 11 z M 3 13L3 21L5 21L5 19L7 19L7 21L9 21L9 13L3 13 z M 5 15L7 15L7 17L5 17L5 15 z M 13 15L15 15L15 17L13 17L13 15 z M 17 15L19 15L19 17L17 17L17 15 z" fill="#FFFFFF"/>
+            </svg>
+            Entidades
+        </button>
+        <button class="icon-button" [class.selected]="currentRoute === 'stays'" routerLink="/administrator/stays">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                <path d="M19,2H5v3H4v2h1h2v1H5v2H4v2h1h2v1H5v2H4v2h1h2v1H5v4h14c1.105,0,2-0.895,2-2V4C21,2.895,20.105,2,19,2z M14,8 c1.105,0,2,0.895,2,2c0,1.105-0.895,2-2,2s-2-0.895-2-2C12,8.895,12.895,8,14,8z M18,16h-8v-1.222c0,0,0.961-1.778,4-1.778 s4,1.778,4,1.778V16z" fill="#FFFFFF"/>
+            </svg>
+            Estancias
+        </button>
+        <button class="icon-button" [class.selected]="currentRoute === 'categories'" routerLink="/administrator/categories">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+                <path d="M4 3 A 1 1 0 0 0 3 4 A 1 1 0 0 0 4 5 A 1 1 0 0 0 5 4 A 1 1 0 0 0 4 3 z M 7 3L7 5L21 5L21 3L7 3 z M 4 7 A 1 1 0 0 0 3 8 A 1 1 0 0 0 4 9 A 1 1 0 0 0 5 8 A 1 1 0 0 0 4 7 z M 7 7L7 9L19 9L19 7L7 7 z M 4 11 A 1 1 0 0 0 3 12 A 1 1 0 0 0 4 13 A 1 1 0 0 0 5 12 A 1 1 0 0 0 4 11 z M 7 11L7 13L17 13L17 11L7 11 z M 4 15 A 1 1 0 0 0 3 16 A 1 1 0 0 0 4 17 A 1 1 0 0 0 5 16 A 1 1 0 0 0 4 15 z M 7 15L7 17L15 17L15 15L7 15 z M 4 19 A 1 1 0 0 0 3 20 A 1 1 0 0 0 4 21 A 1 1 0 0 0 5 20 A 1 1 0 0 0 4 19 z M 7 19L7 21L13 21L13 19L7 19 z" fill="#FFFFFF"/>
+            </svg>
+            Categorias
         </button>
     </div>
     <div class="settings">

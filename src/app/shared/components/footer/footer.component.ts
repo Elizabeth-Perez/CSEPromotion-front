@@ -24,6 +24,7 @@ export class FooterComponent implements OnInit {
         snFacebook: '',
         snYoutube: '',
         snLinkedin: '',
+        status: ''
     };
 
     constructor(
@@ -32,7 +33,7 @@ export class FooterComponent implements OnInit {
 
     ngOnInit(): void {
         this.dashboardService.getCareer().subscribe(res => {
-            const filter = res.filter(isc => isc.studyProgram === 'ISIC-2010-204');
+            const filter = res.filter(isc => isc.status === 'Activo');
             this.career = filter[0];
         });
     }

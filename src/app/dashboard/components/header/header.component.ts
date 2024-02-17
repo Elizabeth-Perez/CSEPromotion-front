@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { DataImages } from "src/app/login/interfaces/login.interface";
 import { DashboardService } from "../../services/dashboard.service";
 import { Carousel } from "../../interfaces/dashboard.interface";
 import { Router } from "@angular/router";
