@@ -40,6 +40,27 @@ export class TableComponent {
         } else if (currentRoute === 'opportunities') {
             this.router.navigate(['administrator/opportunities/view/', id]);
             return '';
+        } else if (currentRoute === 'project-members') {
+            this.router.navigate(['administrator/project-members/view/', id]);
+            return '';
+        } else if (currentRoute === 'academy') {
+            this.router.navigate(['administrator/academy/view/', id]);
+            return '';
+        } else if (currentRoute === 'entities') {
+            this.router.navigate(['administrator/entities/view/', id]);
+            return '';
+        } else if (currentRoute === 'stays') {
+            this.router.navigate(['administrator/stays/view/', id]);
+            return '';
+        } else if (currentRoute === 'categories') {
+            this.router.navigate(['administrator/categories/view/', id]);
+            return '';
+        } else if (currentRoute === 'carousels') {
+            this.router.navigate(['administrator/carousels/view/', id]);
+            return '';
+        } else if (currentRoute === 'carousels-login') {
+            this.router.navigate(['administrator/carousels-login/view/', id]);
+            return '';
         } else {
             console.error('No se pudo determinar la ruta del formulario para esta página.');
             return '';
@@ -66,6 +87,27 @@ export class TableComponent {
         } else if (currentRoute === 'opportunities') {
             this.router.navigate(['administrator/opportunities/', id]);
             return '';
+        } else if (currentRoute === 'project-members') {
+            this.router.navigate(['administrator/project-members/', id]);
+            return '';
+        } else if (currentRoute === 'academy') {
+            this.router.navigate(['administrator/academy/', id]);
+            return '';
+        } else if (currentRoute === 'entities') {
+            this.router.navigate(['administrator/entities/', id]);
+            return '';
+        } else if (currentRoute === 'stays') {
+            this.router.navigate(['administrator/stays/', id]);
+            return '';
+        } else if (currentRoute === 'categories') {
+            this.router.navigate(['administrator/categories/', id]);
+            return '';
+        } else if (currentRoute === 'carousels') {
+            this.router.navigate(['administrator/carousels/', id]);
+            return '';
+        } else if (currentRoute === 'carousels-login') {
+            this.router.navigate(['administrator/carousels-login/', id]);
+            return '';
         } else {
             console.error('No se pudo determinar la ruta del formulario para esta página.');
             return '';
@@ -82,7 +124,7 @@ export class TableComponent {
         modalRef.componentInstance.object = object;
         modalRef.closed.subscribe(result => {
             if (result) {
-                window.location.reload();
+                //pendiente
             }
         });
     }

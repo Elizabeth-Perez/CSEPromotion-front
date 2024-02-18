@@ -1,0 +1,34 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'career'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle" [searchBan]="false"></administrator-header>
+        <form class="form">
+            <div class="row-1">
+                <fieldset class="card" [formGroup]="identificationForm">
+                    <legend>Identificador</legend>
+                    <label>Numero de control<span> *</span></label>
+                    <input type="text" formControlName="controlNumber" placeholder="000T0000" [readonly]="viewBan || editBan">
+                    <!-- ControlNumber Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'controlNumber', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'controlNumber', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Primer nombre<span> *</span></label>
+                    <input type="text" formControlName="firstName" placeholder="Inserta el primer nombre del alumno" [readonly]="viewBan">
+                    <!-- FirstName Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'firstName', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'firstName', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Segundo nombre<span> *</span></label>
+                    <input type="text" formControlName="lastName" placeholder="Inserta el segundo nombre del alumno" [readonly]="viewBan">
+                    <!-- LastName Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'lastName', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'lastName', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="actions">
+            <button (click)="add()" [disabled]="!addBan" [ngClass]="{'active-button': !addBan}">Agregar registro</button>
+            <button (click)="edit()" [disabled]="!editBan" [ngClass]="{'active-button': !editBan}">Guardar cambios</button>
+        </div>
+    </div>
+</div>

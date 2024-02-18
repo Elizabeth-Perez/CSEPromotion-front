@@ -3,7 +3,7 @@ import { Opportunity } from '../../interfaces/administrator.interface';
 import { AdministratorService } from '../../services/administrator.service';
 
 @Component({
-    selector: 'administrator-home-page',
+    selector: 'administrator-opportunity-page',
     templateUrl: './opportunity-page.component.html',
     styleUrls: ['./opportunity-page.component.scss']
 })

@@ -1,0 +1,36 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'carousels'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle" [searchBan]="false"></administrator-header>
+        <form class="form">
+            <div class="row-1">
+                <fieldset class="card" [formGroup]="identificationForm">
+                    <legend>Identificador</legend>
+                    <label>Imagen<span> *</span></label>
+                    <input type="text" formControlName="imageUrl" placeholder="http://imagen.jpg" [readonly]="viewBan">
+                    <!-- ImagenUrl Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'imageUrl', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'imageUrl', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Ubicacion<span> *</span></label>
+                    <select class="combobox" formControlName="owner" (change)="selectOwner()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option>Login</option>
+                        <option>Dashboard</option>
+                        <option>Acerca</option>
+                        <option>Proyectos</option>
+                        <option>Programas</option>
+                        <option>Oportunidades</option>
+                    </select>
+                    <!-- Owner Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'owner', 'required') && !viewBan">Campo requerido.</div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="actions">
+            <button (click)="add()" [disabled]="!addBan" [ngClass]="{'active-button': !addBan}">Agregar registro</button>
+            <button (click)="edit()" [disabled]="!editBan" [ngClass]="{'active-button': !editBan}">Guardar cambios</button>
+        </div>
+    </div>
+</div>

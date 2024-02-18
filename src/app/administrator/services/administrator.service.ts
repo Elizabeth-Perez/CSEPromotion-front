@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Academy, Career, Category, Entity, Opportunity, Participant, Program, ProgramType, Project, ProjectMember, Speciality, Stay } from "../interfaces/administrator.interface";
+import { Academy, Career, Carousel, CarouselLogin, Category, Entity, Opportunity, Participant, Program, ProgramType, Project, ProjectMember, Speciality, Stay } from "../interfaces/administrator.interface";
 
 @Injectable()
 export class AdministratorService {
@@ -55,12 +55,60 @@ export class AdministratorService {
         return this.http.get<Academy[]>(`${this.endpoint}/academy/all`)
     }
 
+    createAcademy(academy: Academy): Observable<Academy> {
+        return this.http.post<Academy>(`${this.endpoint}/academy/create`, academy)
+    }
+
+    updateAcademy(academy: Academy): Observable<Academy> {
+        return this.http.put<Academy>(`${this.endpoint}/academy/update/${academy.teacherEnrollment}`, academy)
+    }
+
+    deleteAcademy(id: string): Observable<Academy> {
+        return this.http.delete<Academy>(`${this.endpoint}/academy/${id}`)
+    }
+
+    findAcademy(id: string): Observable<Academy> {
+        return this.http.get<Academy>(`${this.endpoint}/academy/${id}`)
+    }
+
     getProjectMembers(): Observable<ProjectMember[]> {
         return this.http.get<ProjectMember[]>(`${this.endpoint}/project-members/all`)
     }
 
+    createProjectMembers(projectMember: ProjectMember): Observable<ProjectMember> {
+        return this.http.post<ProjectMember>(`${this.endpoint}/project-members/create`, projectMember)
+    }
+
+    updateProjectMembers(projectMember: ProjectMember): Observable<ProjectMember> {
+        return this.http.put<ProjectMember>(`${this.endpoint}/project-members/update/${projectMember.controlNumber}`, projectMember)
+    }
+
+    deleteProjectMembers(id: string): Observable<ProjectMember> {
+        return this.http.delete<ProjectMember>(`${this.endpoint}/project-members/${id}`)
+    }
+
+    findProjectMembers(id: string): Observable<ProjectMember> {
+        return this.http.get<ProjectMember>(`${this.endpoint}/project-members/${id}`)
+    }
+
     getCategories(): Observable<Category[]> {
         return this.http.get<Category[]>(`${this.endpoint}/categories/all`)
+    }
+
+    createCategory(category: Category): Observable<Category> {
+        return this.http.post<Category>(`${this.endpoint}/categories/create`, category)
+    }
+
+    updateCategory(category: Category): Observable<Category> {
+        return this.http.put<Category>(`${this.endpoint}/categories/update/${category.idCategory}`, category)
+    }
+
+    deleteCategory(id: string): Observable<Category> {
+        return this.http.delete<Category>(`${this.endpoint}/categories/${id}`)
+    }
+
+    findCategory(id: string): Observable<Category> {
+        return this.http.get<Category>(`${this.endpoint}/categories/${id}`)
     }
 
     getPrograms(): Observable<Program[]> {
@@ -131,11 +179,83 @@ export class AdministratorService {
         return this.http.get<Entity[]>(`${this.endpoint}/entities/all`)
     }
 
+    createEntity(entity: Entity): Observable<Entity> {
+        return this.http.post<Entity>(`${this.endpoint}/entities/create`, entity)
+    }
+
+    updateEntity(entity: Entity): Observable<Entity> {
+        return this.http.put<Entity>(`${this.endpoint}/entities/update/${entity.idEntity}`, entity)
+    }
+
+    deleteEntity(id: string): Observable<Entity> {
+        return this.http.delete<Entity>(`${this.endpoint}/entities/${id}`)
+    }
+
+    findEntity(id: string): Observable<Entity> {
+        return this.http.get<Entity>(`${this.endpoint}/entities/${id}`)
+    }
+
     getStays(): Observable<Stay[]> {
         return this.http.get<Stay[]>(`${this.endpoint}/stays/all`)
     }
 
+    createStay(stay: Stay): Observable<Stay> {
+        return this.http.post<Stay>(`${this.endpoint}/stays/create`, stay)
+    }
+
+    updateStay(stay: Stay): Observable<Stay> {
+        return this.http.put<Stay>(`${this.endpoint}/stays/update/${stay.idStay}`, stay)
+    }
+
+    deleteStay(id: string): Observable<Stay> {
+        return this.http.delete<Stay>(`${this.endpoint}/stays/${id}`)
+    }
+
+    findStay(id: string): Observable<Stay> {
+        return this.http.get<Stay>(`${this.endpoint}/stays/${id}`)
+    }
+
     getParticipants(): Observable<Participant[]> {
         return this.http.get<Participant[]>(`${this.endpoint}/participants/all`)
+    }
+
+    getCarousels(): Observable<Carousel[]> {
+        return this.http.get<Carousel[]>(`${this.endpoint}/carousels/all`)
+    }
+
+    createCarousel(carousel: Carousel): Observable<Carousel> {
+        return this.http.post<Carousel>(`${this.endpoint}/carousels/create`, carousel)
+    }
+
+    updateCarousel(carousel: Carousel): Observable<Carousel> {
+        return this.http.put<Carousel>(`${this.endpoint}/carousels/update/${carousel.idCarousel}`, carousel)
+    }
+
+    deleteCarousel(id: string): Observable<Carousel> {
+        return this.http.delete<Carousel>(`${this.endpoint}/carousels/${id}`)
+    }
+
+    findCarousel(id: string): Observable<Carousel> {
+        return this.http.get<Carousel>(`${this.endpoint}/carousels/${id}`)
+    }
+
+    getCarouselsLogin(): Observable<CarouselLogin[]> {
+        return this.http.get<CarouselLogin[]>(`${this.endpoint}/carousels-login/all`)
+    }
+
+    createCarouselLogin(carouselLogin: CarouselLogin): Observable<CarouselLogin> {
+        return this.http.post<CarouselLogin>(`${this.endpoint}/carousels-login/create`, carouselLogin)
+    }
+
+    updateCarouselLogin(carouselLogin: CarouselLogin): Observable<CarouselLogin> {
+        return this.http.put<CarouselLogin>(`${this.endpoint}/carousels-login/update/${carouselLogin.idCarouselLogin}`, carouselLogin)
+    }
+
+    deleteCarouselLogin(id: string): Observable<CarouselLogin> {
+        return this.http.delete<CarouselLogin>(`${this.endpoint}/carousels-login/${id}`)
+    }
+
+    findCarouselLogin(id: string): Observable<CarouselLogin> {
+        return this.http.get<CarouselLogin>(`${this.endpoint}/carousels-login/${id}`)
     }
 }

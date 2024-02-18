@@ -17,6 +17,15 @@ import { AcademyPageComponent } from './pages/academy-page/academy-page.componen
 import { EntityPageComponent } from './pages/entity-page/entity-page.component';
 import { StayPageComponent } from './pages/stay-page/stay-page.component';
 import { CategoryPageComponent } from './pages/category-page/category-page.component';
+import { ProjectMemberFormComponent } from './components/project-member-form/project-member-form.component';
+import { AcademyFormComponent } from './components/academy-form/academy-form.component';
+import { EntityFormComponent } from './components/entity-form/entity-form.component';
+import { StayFormComponent } from './components/stay-form/stay-form.component';
+import { CategoryFormComponent } from './components/category-form/category-form.component';
+import { CarouselPageComponent } from './pages/carousel-page/carousel-page.component';
+import { CarouselLoginPageComponent } from './pages/carousel-login-page/carousel-login-page.component';
+import { CarouselFormComponent } from './components/carousel-form/carousel-form.component';
+import { CarouselLoginFormComponent } from './components/carousel-login-form/carousel-login-form.component';
 
 const routes: Routes = [
     {
@@ -108,20 +117,112 @@ const routes: Routes = [
         component: ProjectMemberPageComponent
     },
     {
+        path: 'project-members/new',
+        component: ProjectMemberFormComponent
+    },
+    {
+        path: 'project-members/:id',
+        component: ProjectMemberFormComponent
+    },
+    {
+        path: 'project-members/view/:id',
+        component: ProjectMemberFormComponent
+    },
+    {
         path: 'academy',
         component: AcademyPageComponent
+    },
+    {
+        path: 'academy/new',
+        component: AcademyFormComponent
+    },
+    {
+        path: 'academy/:id',
+        component: AcademyFormComponent
+    },
+    {
+        path: 'academy/view/:id',
+        component: AcademyFormComponent
     },
     {
         path: 'entities',
         component: EntityPageComponent
     },
     {
+        path: 'entities/new',
+        component: EntityFormComponent
+    },
+    {
+        path: 'entities/:id',
+        component: EntityFormComponent
+    },
+    {
+        path: 'entities/view/:id',
+        component: EntityFormComponent
+    },
+    {
         path: 'stays',
         component: StayPageComponent
     },
     {
+        path: 'stays/new',
+        component: StayFormComponent
+    },
+    {
+        path: 'stays/:id',
+        component: StayFormComponent
+    },
+    {
+        path: 'stays/view/:id',
+        component: StayFormComponent
+    },
+    {
         path: 'categories',
         component: CategoryPageComponent
+    },
+    {
+        path: 'categories/new',
+        component: CategoryFormComponent
+    },
+    {
+        path: 'categories/:id',
+        component: CategoryFormComponent
+    },
+    {
+        path: 'categories/view/:id',
+        component: CategoryFormComponent
+    },
+    {
+        path: 'carousels',
+        component: CarouselPageComponent
+    },
+    {
+        path: 'carousels/new',
+        component: CarouselFormComponent
+    },
+    {
+        path: 'carousels/:id',
+        component: CarouselFormComponent
+    },
+    {
+        path: 'carousels/view/:id',
+        component: CarouselFormComponent
+    },
+    {
+        path: 'carousels-login',
+        component: CarouselLoginPageComponent
+    },
+    {
+        path: 'carousels-login/new',
+        component: CarouselLoginFormComponent
+    },
+    {
+        path: 'carousels-login/:id',
+        component: CarouselLoginFormComponent
+    },
+    {
+        path: 'carousels-login/view/:id',
+        component: CarouselLoginFormComponent
     },
     {
         path: '**',

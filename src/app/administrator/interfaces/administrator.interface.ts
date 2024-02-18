@@ -102,3 +102,17 @@ export interface ProgramType {
   idProgramType: number;
   name: string;
 }
+
+export interface Carousel {
+  idCarousel: number;
+  carrer: Career;
+  imageUrl: string;
+  owner: string;
+}
+
+export interface CarouselLogin {
+  idCarouselLogin: number;
+  carousel: Carousel;
+  title: string;
+  description: string;
+}

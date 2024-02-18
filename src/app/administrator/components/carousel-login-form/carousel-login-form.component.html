@@ -1,0 +1,38 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'carousels-login'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle" [searchBan]="false"></administrator-header>
+        <form class="form">
+            <div class="row-1">
+                <fieldset class="card" [formGroup]="identificationForm">
+                    <legend>Identificador</legend>
+                    <label>Carrusel<span> *</span></label>
+                    <select class="combobox" formControlName="carousel" (change)="selectCarousel()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option *ngFor="let c of carousels" [value]="c?.idCarousel">
+                            {{ c?.imageUrl }}
+                        </option>
+                    </select>
+                    <!-- Carousel Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'carousel', 'required') && !viewBan">Campo requerido.</div>
+                    <label>Titulo<span> *</span></label>
+                    <input type="text" formControlName="title" placeholder="Inserta el titulo de la imagen" [readonly]="viewBan">
+                    <!-- Title Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'title', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'title', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Descripcion<span> *</span></label>
+                    <input type="text" formControlName="description" placeholder="Inserta el titulo de la imagen" [readonly]="viewBan">
+                    <!-- Description Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'description', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'description', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="actions">
+            <button (click)="add()" [disabled]="!addBan" [ngClass]="{'active-button': !addBan}">Agregar registro</button>
+            <button (click)="edit()" [disabled]="!editBan" [ngClass]="{'active-button': !editBan}">Guardar cambios</button>
+        </div>
+    </div>
+</div>

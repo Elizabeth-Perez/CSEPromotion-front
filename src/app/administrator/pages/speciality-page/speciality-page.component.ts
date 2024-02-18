@@ -3,7 +3,7 @@ import { AdministratorService } from '../../services/administrator.service';
 import { Speciality } from '../../interfaces/administrator.interface';
 
 @Component({
-    selector: 'administrator-home-page',
+    selector: 'administrator-speciality-page',
     templateUrl: './speciality-page.component.html',
     styleUrls: ['./speciality-page.component.scss']
 })

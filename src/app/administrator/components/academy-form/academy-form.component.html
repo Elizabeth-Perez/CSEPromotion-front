@@ -1,0 +1,58 @@
+<div class="main-layout">
+    <div class="slider">
+        <administrator-slider [currentRoute]="'academy'"></administrator-slider>
+    </div>
+    <div class="content">
+        <administrator-header [title]="title" [subTitle]="subTitle" [searchBan]="false"></administrator-header>
+        <form class="form">
+            <div class="row-1">
+                <fieldset class="card" [formGroup]="identificationForm">
+                    <legend>Identificador</legend>
+                    <label>Numero de control<span> *</span></label>
+                    <input type="text" formControlName="teacherEnrollment" placeholder="000T0000" [readonly]="viewBan || editBan">
+                    <!-- TeacherEnrollment Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'teacherEnrollment', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'teacherEnrollment', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Primer nombre<span> *</span></label>
+                    <input type="text" formControlName="firstName" placeholder="Inserta el primer nombre del alumno" [readonly]="viewBan">
+                    <!-- FirstName Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'firstName', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'firstName', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Segundo nombre<span> *</span></label>
+                    <input type="text" formControlName="lastName" placeholder="Inserta el segundo nombre del alumno" [readonly]="viewBan">
+                    <!-- LastName Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'lastName', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'lastName', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <label>Grado<span> *</span></label>
+                    <select class="combobox" formControlName="degree" (change)="selectDegree()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option>ING</option>
+                        <option>MTRO(A)</option>
+                        <option>DR(A)</option>
+                    </select>
+                    <!-- Degree Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'degree', 'required') && !viewBan">Campo requerido.</div>
+                    <label>Rol<span> *</span></label>
+                    <select class="combobox" formControlName="rol" (change)="selectRol()">
+                        <option [value]="null" disabled selected hidden>Seleccionar</option>
+                        <option>Docente</option>
+                        <option>Jefe de carrera</option>
+                        <option>Presidente</option>
+                    </select>
+                    <!-- Rol Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'rol', 'required') && !viewBan">Campo requerido.</div>
+                    <label>Correo electronico<span> *</span></label>
+                    <input type="email" formControlName="email" placeholder="example@mail.com" [readonly]="viewBan">
+                    <!-- Email Validators -->
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'email', 'required') && !viewBan">Campo requerido.</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'email', 'maxlength') && !viewBan">Numero de caracteres exedido</div>
+                    <div class="warnings" *ngIf="validateControl(identificationForm, 'email', 'email') && !viewBan">Correo electronico invalido</div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="actions">
+            <button (click)="add()" [disabled]="!addBan" [ngClass]="{'active-button': !addBan}">Agregar registro</button>
+            <button (click)="edit()" [disabled]="!editBan" [ngClass]="{'active-button': !editBan}">Guardar cambios</button>
+        </div>
+    </div>
+</div>

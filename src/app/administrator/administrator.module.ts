@@ -12,6 +12,13 @@ import { ProjectFormComponent } from "./components/project-form/project-form.com
 import { ProgramFormComponent } from "./components/program-form/program-form.component";
 import { SpecialityFormComponent } from "./components/speciality-form/speciality-form.component";
 import { opportunityFormComponent } from "./components/opportunity-form/opportunity-form.component";
+import { ProjectMemberFormComponent } from "./components/project-member-form/project-member-form.component";
+import { AcademyFormComponent } from "./components/academy-form/academy-form.component";
+import { EntityFormComponent } from "./components/entity-form/entity-form.component";
+import { StayFormComponent } from "./components/stay-form/stay-form.component";
+import { CategoryFormComponent } from "./components/category-form/category-form.component";
+import { CarouselFormComponent } from "./components/carousel-form/carousel-form.component";
+import { CarouselLoginFormComponent } from "./components/carousel-login-form/carousel-login-form.component";
 
 //Dialogs
 import { DeleteRegisterComponent } from "./dialogs/delete-register/delete-register.component";
@@ -31,6 +38,8 @@ import { AcademyPageComponent } from "./pages/academy-page/academy-page.componen
 import { EntityPageComponent } from "./pages/entity-page/entity-page.component";
 import { StayPageComponent } from "./pages/stay-page/stay-page.component";
 import { CategoryPageComponent } from "./pages/category-page/category-page.component";
+import { CarouselPageComponent } from "./pages/carousel-page/carousel-page.component";
+import { CarouselLoginPageComponent } from "./pages/carousel-login-page/carousel-login-page.component";
 
 @NgModule({
     declarations: [
@@ -45,6 +54,8 @@ import { CategoryPageComponent } from "./pages/category-page/category-page.compo
         EntityPageComponent,
         StayPageComponent,
         CategoryPageComponent,
+        CarouselPageComponent,
+        CarouselLoginPageComponent,
         SliderComponent,
         HeaderComponent,
         TableComponent,
@@ -53,6 +64,13 @@ import { CategoryPageComponent } from "./pages/category-page/category-page.compo
         ProgramFormComponent,
         SpecialityFormComponent,
         opportunityFormComponent,
+        ProjectMemberFormComponent,
+        AcademyFormComponent,
+        EntityFormComponent,
+        StayFormComponent,
+        CategoryFormComponent,
+        CarouselFormComponent,
+        CarouselLoginFormComponent,
         DeleteRegisterComponent,
     ],
     imports: [

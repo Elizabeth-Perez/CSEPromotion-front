@@ -4,9 +4,15 @@
     box-sizing: border-box;
 }
 
-.content {
+.contentt {
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: center;
+
+    .carousel {
+        width: 60%;
+    }
+    .form {
+        width: 40%;
+    }
 }

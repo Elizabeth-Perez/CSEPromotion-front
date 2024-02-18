@@ -28,6 +28,22 @@ export class HeaderComponent {
             return '/administrator/specialities/new';
         } else if (currentRoute === 'opportunities') {
             return '/administrator/opportunities/new';
+        } else if (currentRoute === 'project-members') {
+            return '/administrator/project-members/new';
+        } else if (currentRoute === 'academy') {
+            return '/administrator/academy/new';
+        } else if (currentRoute === 'entities') {
+            return '/administrator/entities/new';
+        } else if (currentRoute === 'stays') {
+            return '/administrator/stays/new';
+        } else if (currentRoute === 'categories') {
+            return '/administrator/categories/new';
+        } else if (currentRoute === 'carousels') {
+            return '/administrator/carousels/new';
+        } else if (currentRoute === 'carousels-login') {
+            return '/administrator/carousels-login/new';
+        } else if (currentRoute === 'home') {
+            return '';
         } else {
             console.error('No se pudo determinar la ruta del formulario para esta página.');
             return '';

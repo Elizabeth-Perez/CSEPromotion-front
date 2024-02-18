@@ -3,7 +3,7 @@ import { Career } from '../../interfaces/administrator.interface';
 import { AdministratorService } from '../../services/administrator.service';
 
 @Component({
-    selector: 'administrator-home-page',
+    selector: 'administrator-career-page',
     templateUrl: './career-page.component.html',
     styleUrls: ['./career-page.component.scss']
 })
