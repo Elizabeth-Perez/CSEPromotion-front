@@ -1,0 +1,14 @@
+<div class="menu-tabs">
+    <div class="item-tab" (click)="goToIdentity()" [ngClass]="{ 'selected': isItemSelected(0) }">
+        <h5>Identidad</h5>
+        <div class="line"></div>
+    </div>
+    <div class="item-tab" (click)="goToProfiles()" [ngClass]="{ 'selected': isItemSelected(1) }">
+        <h5>Perfiles</h5>
+        <div class="line"></div>
+    </div>
+    <div class="item-tab" (click)="goToAcademy()" [ngClass]="{ 'selected': isItemSelected(2) }">
+        <h5>Academia</h5>
+        <div class="line"></div>
+    </div>
+</div>

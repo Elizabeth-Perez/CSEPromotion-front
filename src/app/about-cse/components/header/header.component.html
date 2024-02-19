@@ -1,0 +1,18 @@
+<div class="main-layout">
+    <div class="data">
+        <div class="title-section">
+            <div class="line-vertical"></div>
+            <h1>¿Sabes qué hace un ingeniero en Sistemas Computacionales?</h1>
+        </div>
+        <h5>Un ingeniero en sistemas computacionales desempeña un papel esencial en la era digital actual, siendo la
+            mente detrás de la planificación, desarrollo y mantenimiento de sistemas informáticos que impulsan la
+            eficiencia y la innovación.</h5>
+        <div class="buttons">
+            <button class="header-button button-1" (click)="goToSpecialities()">Ver especialidades</button>
+            <button class="header-button button-2" (click)="goToOpportunities()">Ver oportunidades</button>
+        </div>
+    </div>
+    <div class="carousel" *ngIf="images.length > 0">
+        <img [src]="images[currentIndex].imageUrl">
+    </div>
+</div>

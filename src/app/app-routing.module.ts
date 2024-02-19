@@ -7,6 +7,9 @@ import { MainProjects } from "./projects/pages/main-projects/main-projects.compo
 import { MainPrograms } from "./programs/pages/main-programs/main-programs.component";
 import { MainOpportunities } from "./opportinities/pages/main-opportinities/main-opportunities.component";
 import { MainSpecialities } from "./specialities/pages/main-specialities/main-specialities.component";
+import { ContentIdentityComponent } from "./about-cse/components/content-identity/content-identity.component";
+import { ContentProfilesComponent } from "./about-cse/components/content-profiles/content-profiles.component";
+import { ContentAcademyComponent } from "./about-cse/components/content-academy/content-academy.component";
 
 const routes: Routes = [
     {
@@ -19,7 +22,21 @@ const routes: Routes = [
     },
     {
         path: 'about-cse',
-        component: MainAboutCSE
+        component: MainAboutCSE,
+        children: [
+            {
+                path: 'identity',
+                component: ContentIdentityComponent
+            },
+            {
+                path: 'profiles',
+                component: ContentProfilesComponent
+            },
+            {
+                path: 'academy',
+                component: ContentAcademyComponent
+            },
+        ]
     },
     {
         path: 'administrator',

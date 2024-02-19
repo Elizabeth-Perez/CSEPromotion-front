@@ -1,0 +1,41 @@
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+
+    .item-tab {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 14rem;
+        cursor: pointer;
+
+        &:hover {
+
+            .line {
+                background-color: var(--violet2);
+            }
+        }
+
+        h5 {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            padding: 0;
+        }
+
+        &.selected {
+
+            .line {
+                background-color: var(--violet2);
+            }
+        }
+
+        .line {
+            width: 100%;
+            height: 5px;
+            background-color: var(--light-gray);
+        }
+    }
+}

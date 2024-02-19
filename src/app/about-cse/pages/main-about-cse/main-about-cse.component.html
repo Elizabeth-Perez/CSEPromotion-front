@@ -1,2 +1,13 @@
 <shared-main-navigation [currentRoute]="'about-cse'"></shared-main-navigation>
-<h1>Main About CSE</h1>
+<div class="content">
+    <about-cse-header></about-cse-header>
+    <div class="line"></div>
+</div>
+<about-cse-menu-tabs></about-cse-menu-tabs>
+<div class="content">
+    <router-outlet></router-outlet>
+    <div class="card" *ngIf="!showCard">
+        <h4>¿Que deseas conocer de nuestra carrera?</h4>
+    </div>
+</div>
+<shared-footer></shared-footer>
