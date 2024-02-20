@@ -20,7 +20,7 @@ export class ProjectFormComponent implements OnInit {
     editBan: boolean = false;
     viewBan: boolean = false;
     career: Career = {
-        studyProgram: 'ISIC-2010-204',
+        studyProgram: 'ISIC-2010-224',
         extension: '',
         phone: '',
         email: '',
