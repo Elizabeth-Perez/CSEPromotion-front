@@ -1,2 +1,7 @@
+<div class="carousel" *ngIf="images.length > 0">
+    <img [src]="images[currentIndex].imageUrl">
+</div>
 <shared-main-navigation [currentRoute]="'projects'"></shared-main-navigation>
-<h1>Main Projects</h1>
+<div class="content">
+    <projects-header></projects-header>
+</div>

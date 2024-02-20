@@ -1,0 +1,29 @@
+.content {
+    max-width: 120rem;
+    padding: 0 6.25rem;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 37.5rem;
+    padding: 2.4375rem 1.875rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    transition: opacity 2s ease;
+    z-index: -1;
+    
+    img {
+        width: 50rem;
+        height: 31.25rem;
+        object-fit: cover;
+        border-radius: 1.5625rem;
+    }
+}
