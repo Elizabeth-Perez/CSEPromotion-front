@@ -1,0 +1,36 @@
+.main-layout {
+    background-color: var(--light-gray);
+    padding: 6.25rem;
+
+    .title {
+        text-align: center;
+    }
+
+    .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        .rigth {
+            width: 100%;
+
+            h2 {
+                padding: 1rem;
+                margin: 0;
+                color: var(--violet2);
+                cursor: pointer;
+            }
+            
+            h2:hover{
+                color: var(--violet1);
+                text-decoration: underline;
+            }
+        }
+
+        .left {
+            width: 100%;
+            text-align: end;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 <div class="main-layout">
     <div class="logo">
-        <img src="./../../../../assets/images/cse_standard.png" routerLink="/dashboard">
+        <img *ngIf="!logoWhite" src="./../../../../assets/images/cse_standard.png" routerLink="/dashboard">
+        <img *ngIf="logoWhite" src="./../../../../assets/images/cse_standard_white.png" routerLink="/dashboard">
     </div>
     <div class="menu">
         <input type="text" placeholder="Search">

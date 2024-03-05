@@ -1,0 +1,14 @@
+<div class="main-layout">
+    <div class="data">
+        <div class="title-section">
+            <div class="line-vertical"></div>
+            <h1>Explorando Oportunidades en Tecnología: Especialidades en {{ specialities[0].name }}</h1>
+        </div>
+        <h5>En el mundo actual altamente tecnológico, el conocimiento y la especialización en campos como el desarrollo de aplicaciones móviles, desarrollo web y ciencia de datos son esenciales para el crecimiento personal y profesional.</h5>
+    </div>
+    <div class="carousel" *ngIf="specialities.length > 0">
+        <img [src]="specialities[0].imageUrl">
+        <img [src]="specialities[1].imageUrl">
+        <img [src]="specialities[2].imageUrl">
+    </div>
+</div>

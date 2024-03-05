@@ -1,7 +1,23 @@
 <div class="carousel" *ngIf="images.length > 0">
     <img [src]="images[currentIndex].imageUrl">
 </div>
-<shared-main-navigation [currentRoute]="'projects'"></shared-main-navigation>
+<shared-main-navigation [currentRoute]="'projects'" [logoWhite]="true"></shared-main-navigation>
 <div class="content">
     <projects-header></projects-header>
 </div>
+<projects-filter></projects-filter>
+<div class="content">
+    <div class="projects">
+        <h3>Estos son los proyectos encontrados:</h3>
+        <div class="card-projects" *ngIf="projects.length > 0">
+            <div class="card" *ngFor="let project of projects">
+                <img [src]="project.imageUrl" alt="{{ project.name }}">
+                <div class="data-project">
+                    <h4 class="ellipsis"> {{ project.name }}</h4>
+                    <p class="line-clap-2">{{ project.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<shared-footer></shared-footer>

@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 
 //Components
 import { HeaderComponent } from "./components/header/header.component";
+import { FilterComponent } from "./components/filter/filter.component";
 
 //Dialogs
 
@@ -17,12 +18,14 @@ import { CommonModule } from "@angular/common";
 
 
 
+
 @NgModule({
     declarations: [
         MainProjects,
         Innovation,
         Titulation,
         HeaderComponent,
+        FilterComponent,
     ],
     imports: [
         SharedModule,

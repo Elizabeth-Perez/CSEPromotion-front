@@ -1,0 +1,96 @@
+<div class="main-layout">
+    <div class="left-column" *ngIf="leftPosition">
+        <div class="color-rect-1" [ngClass]="{'bg-aqua1': color === 'aqua1', 'bg-violet3': color === 'violet3', 'bg-aqua3': color === 'aqua3'}"></div>
+        <div class="color-rect-2" [ngClass]="{'bg-aqua1': color === 'aqua1', 'bg-violet3': color === 'violet3', 'bg-aqua3': color === 'aqua3'}"></div>
+        <div class="rect-img" [style.backgroundImage]="'url(' + programs[currentIndex].imageUrl + ')'">
+        </div>
+        <div class="rect-data">
+            <div class="data">
+                <h3> {{ programs[currentIndex].name }} </h3>
+                <p class="line-clap-10"> {{ programs[currentIndex].description }} </p>
+            </div>
+            <div class="hyperlink">
+                <a [href]="programs[currentIndex].hyperlink" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M25.3333 25.3333H6.66667V6.66667H16V4H6.66667C5.18667 4 4 5.2 4 6.66667V25.3333C4 26.8 5.18667 28 6.66667 28H25.3333C26.8 28 28 26.8 28 25.3333V16H25.3333V25.3333ZM18.6667 4V6.66667H23.4533L10.3467 19.7733L12.2267 21.6533L25.3333 8.54667V13.3333H28V4H18.6667Z" fill="#03838F"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="rigth-column">
+        <h2> {{ data.title }} </h2>
+        <h6> {{ data.subtitle }} </h6>
+        <div class="sections">
+            <div class="section-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="64" viewBox="0 0 65 64" fill="none">
+                    <path
+                        d="M54 16H43.3333V10.6667C43.3333 7.70671 40.96 5.33337 38 5.33337H27.3333C24.3733 5.33337 22 7.70671 22 10.6667V16H11.3333C8.37333 16 6.02667 18.3734 6.02667 21.3334L6 50.6667C6 53.6267 8.37333 56 11.3333 56H54C56.96 56 59.3333 53.6267 59.3333 50.6667V21.3334C59.3333 18.3734 56.96 16 54 16ZM38 16H27.3333V10.6667H38V16Z"
+                        fill="black" />
+                </svg>
+                <h6> {{ data.sectionsTitle.title1 }} </h6>
+                <p>{{ data.sectionsText.text1 }}</p>
+            </div>
+            <div class="section-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <path
+                        d="M29.3335 37.3334H24.0002C24.0002 24.08 34.7468 13.3334 48.0002 13.3334V18.6667C37.6802 18.6667 29.3335 27.0134 29.3335 37.3334ZM48.0002 29.3334V24C40.6402 24 34.6668 29.9734 34.6668 37.3334H40.0002C40.0002 32.9067 43.5735 29.3334 48.0002 29.3334ZM18.6668 10.6667C18.6668 7.70671 16.2935 5.33337 13.3335 5.33337C10.3735 5.33337 8.00016 7.70671 8.00016 10.6667C8.00016 13.6267 10.3735 16 13.3335 16C16.2935 16 18.6668 13.6267 18.6668 10.6667ZM30.5335 12H25.2002C24.5602 15.7867 21.3068 18.6667 17.3335 18.6667H9.3335C7.12016 18.6667 5.3335 20.4534 5.3335 22.6667V29.3334H21.3335V23.3067C26.2935 21.7334 30.0002 17.36 30.5335 12ZM50.6668 45.3334C53.6268 45.3334 56.0002 42.96 56.0002 40C56.0002 37.04 53.6268 34.6667 50.6668 34.6667C47.7068 34.6667 45.3335 37.04 45.3335 40C45.3335 42.96 47.7068 45.3334 50.6668 45.3334ZM54.6668 48H46.6668C42.6935 48 39.4402 45.12 38.8002 41.3334H33.4668C34.0002 46.6934 37.7068 51.0667 42.6668 52.64V58.6667H58.6668V52C58.6668 49.7867 56.8802 48 54.6668 48Z"
+                        fill="black" />
+                </svg>
+                <h6> {{ data.sectionsTitle.title2 }}</h6>
+                <p> {{ data.sectionsText.text2 }} </p>
+            </div>
+            <div class="section-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="64" viewBox="0 0 65 64" fill="none">
+                    <path
+                        d="M13.6664 35.1467V42.64C13.6664 44.5867 14.7331 46.4 16.4398 47.3334L29.7731 54.6134C31.3731 55.4934 33.2931 55.4934 34.8931 54.6134L48.2264 47.3334C49.9331 46.4 50.9998 44.5867 50.9998 42.64V35.1467L34.8931 43.9467C33.2931 44.8267 31.3731 44.8267 29.7731 43.9467L13.6664 35.1467ZM29.7731 9.3867L7.29309 21.6534C5.45309 22.6667 5.45309 25.3334 7.29309 26.3467L29.7731 38.6134C31.3731 39.4934 33.2931 39.4934 34.8931 38.6134L56.3331 26.9067V42.6667C56.3331 44.1334 57.5331 45.3334 58.9998 45.3334C60.4664 45.3334 61.6664 44.1334 61.6664 42.6667V25.5734C61.6664 24.5867 61.1331 23.7067 60.2798 23.2267L34.8931 9.3867C33.2931 8.53337 31.3731 8.53337 29.7731 9.3867Z"
+                        fill="black" />
+                </svg>
+                <h6>{{ data.sectionsTitle.title3 }}</h6>
+                <p> {{ data.sectionsText.text3 }} </p>
+            </div>
+        </div>
+    </div>
+    <div class="left-column" *ngIf="!leftPosition">
+        <div class="color-rect-1" [ngClass]="{'bg-aqua1': color === 'aqua1', 'bg-violet3': color === 'violet3', 'bg-aqua3': color === 'aqua3'}"></div>
+        <div class="color-rect-2" [ngClass]="{'bg-aqua1': color === 'aqua1', 'bg-violet3': color === 'violet3', 'bg-aqua3': color === 'aqua3'}"></div>
+        <div class="rect-img" [style.backgroundImage]="'url(' + programs[currentIndex].imageUrl + ')'">
+        </div>
+        <div class="rect-data">
+            <div class="data">
+                <h3> {{ programs[currentIndex].name }} </h3>
+                <p class="line-clap-10"> {{ programs[currentIndex].description }} </p>
+            </div>
+            <div class="hyperlink">
+                <a [href]="programs[currentIndex].hyperlink" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M25.3333 25.3333H6.66667V6.66667H16V4H6.66667C5.18667 4 4 5.2 4 6.66667V25.3333C4 26.8 5.18667 28 6.66667 28H25.3333C26.8 28 28 26.8 28 25.3333V16H25.3333V25.3333ZM18.6667 4V6.66667H23.4533L10.3467 19.7733L12.2267 21.6533L25.3333 8.54667V13.3333H28V4H18.6667Z" fill="#03838F"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="show-more">
+    <button (click)="toggleShowMore()" class="icon-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M25.3333 17.3334H17.3333V25.3334H14.6666V17.3334H6.66663V14.6667H14.6666V6.66675H17.3333V14.6667H25.3333V17.3334Z" fill="white"/>
+        </svg>
+    </button>
+    <div class="cards" *ngIf="showMore">
+        <div class="card" *ngFor="let program of programs">
+            <a [href]="program.hyperlink" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="42" height="41" viewBox="0 0 42 41" fill="none">
+                    <path
+                        d="M35 4.75H21C20.0375 4.75 19.25 5.5375 19.25 6.5V9.3175C19.25 9.3175 19.25 9.3175 19.2675 9.335L28.0175 17.21C29.12 18.19 29.75 19.625 29.75 21.1125V22.25H33.25V25.75H29.75V29.25H33.25V32.75H29.75V36.25H35C35.9625 36.25 36.75 35.4625 36.75 34.5V6.5C36.75 5.5375 35.9625 4.75 35 4.75ZM26.25 11.75H22.75V8.25H26.25V11.75ZM33.25 18.75H29.75V15.25H33.25V18.75ZM33.25 11.75H29.75V8.25H33.25V11.75Z"
+                        fill="black" />
+                    <path
+                        d="M26.25 34.4999V21.1124C26.25 20.6224 26.04 20.1499 25.6725 19.8174L16.9225 11.9424C16.59 11.6274 16.17 11.4874 15.75 11.4874C15.33 11.4874 14.91 11.6449 14.5775 11.9424L5.8275 19.8174C5.46 20.1324 5.25 20.6049 5.25 21.1124V34.4999C5.25 35.4624 6.0375 36.2499 7 36.2499H10.5C11.4625 36.2499 12.25 35.4624 12.25 34.4999V27.4999H19.25V34.4999C19.25 35.4624 20.0375 36.2499 21 36.2499H24.5C25.4625 36.2499 26.25 35.4624 26.25 34.4999Z"
+                        fill="black" />
+                </svg>
+                <p>{{ program.name }}</p>
+            </a>
+        </div>
+        
+    </div>
+</div>

@@ -7,4 +7,5 @@ import { Component, Input } from "@angular/core";
 })
 export class MainNavigationComponent{
     @Input() currentRoute: string = 'dashboard';
+    @Input() logoWhite: boolean = false;
 }

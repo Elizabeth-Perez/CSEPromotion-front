@@ -1,2 +1,13 @@
-<shared-main-navigation [currentRoute]="'programs'"></shared-main-navigation>
-<h1>Main Programs</h1>
+<div class="carousel" *ngIf="images.length > 0">
+    <img [src]="images[currentIndex].imageUrl">
+</div>
+<shared-main-navigation [currentRoute]="'programs'" [logoWhite]="true"></shared-main-navigation>
+<div class="content">
+    <programs-header></programs-header>
+</div>
+<div class="content">
+    <programs-program-type [leftPosition]="true" [data]="contentLearning" [programs]="programsLearning" [color]="aqua1"></programs-program-type>
+    <programs-program-type [leftPosition]="false" [data]="contentCompetition" [programs]="programsCompetition" [color]="violet3"></programs-program-type>
+    <programs-program-type [leftPosition]="true" [data]="contentConferences" [programs]="programsConferences" [color]="aqua3"></programs-program-type>
+</div>
+<shared-footer></shared-footer>

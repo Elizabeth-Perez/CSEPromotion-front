@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Carousel } from "../../interfaces/projects.interface";
+import { Carousel, Project } from "../../interfaces/projects.interface";
 import { ProjectService } from "../../services/projects.service";
 import { Router } from "@angular/router";
 
@@ -13,6 +13,7 @@ export class MainProjects {
 
     images: Carousel[] = [];
     currentIndex: number = 0;
+    projects: Project[] = [];
 
     constructor(
         private dashboardService: ProjectService,
@@ -20,6 +21,9 @@ export class MainProjects {
     ) { }
 
     ngOnInit(): void {
+        this.dashboardService.getProjects().subscribe(res => {
+            this.projects = res;
+        });
         this.dashboardService.getCarousels().subscribe(res => {
             this.images = res.filter(item => item.owner === 'Proyectos');
             this.currentIndex = Math.floor(Math.random() * this.images.length);
