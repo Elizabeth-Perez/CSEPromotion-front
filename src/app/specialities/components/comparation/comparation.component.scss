@@ -1,0 +1,56 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    padding: 5rem 0;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      
+        td {
+          text-align: center;
+          padding: 1rem 2rem;
+          vertical-align: top;
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: var(--gray);
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        .aling-start {
+            text-align: start;
+        }
+
+        .carousel {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .icon-button {
+            background-color: var(--white);
+            padding: 0.7rem;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .icon-button:hover {
+            background-color: var(--light-gray);
+        }
+    }
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}

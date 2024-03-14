@@ -24,3 +24,52 @@ export interface Carrer {
     definition: string;
     imageUrl: string;
   }
+
+  export interface Functions {
+    idFunction: number;
+    speciality: Speciality;
+    name: string;
+    description: string;
+  }
+
+  export interface Skill {
+    idSkill: number;
+    name: string;
+    description: string;
+    speciality: Speciality;
+  }
+
+  export interface ProgrammingLanguages {
+    idProgrammingLanguage: number;
+    name: string;
+    imageUrl: string;
+    speciality: Speciality[];
+  }
+
+  export interface Ides {
+    idIde: number;
+    name: string;
+    imageUrl: string;
+    speciality: Speciality[];
+  }
+
+  export interface Frameworks {
+    idFrameworks: number;
+    name: string;
+    imageUrl: string;
+    speciality: Speciality[];
+  }
+
+  export interface Certification {
+    idCertification: number;
+    entity: Entity;
+    speciality: Speciality;
+    name: string;
+  }
+  
+  export interface Entity {
+    idEntity: number;
+    name: string;
+  }
+  
+  

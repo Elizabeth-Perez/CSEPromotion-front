@@ -1,0 +1,13 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    gap: 2rem;
+    width: 100%;
+    height: 550px;
+    background-color: var(--violet1);
+    padding: 3rem 6.25rem;
+    text-align: center;
+}
